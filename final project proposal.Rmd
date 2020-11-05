@@ -16,8 +16,9 @@ The phenomenon of dog bite seems to be uncommon nowadays, which might make some 
 
 
 
+### The intended final products/the planned analyses/visualization
 
-
+From the dog bite dataset, we will utilize data of bite to figure out the distribution and analyze the trend of bite rate by making a histogram. From the NYC dog licensing dataset, we make a line chart with the license issued date to find out whether there is an association between bite rate and license.
 
 
 The three datasets have a common variable: borough. Therefore, we will use three 

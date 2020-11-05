@@ -18,6 +18,14 @@ of dog bite such as physical injuries and potential diseases has aroused
 wide public concern. This project is designed to analyze potential
 associated indicators for the dog bite.
 
+### The intended final products/the planned analyses/visualization
+
+From the dog bite dataset, we will utilize data of bite to figure out
+the distribution and analyze the trend of bite rate by making a
+histogram. From the NYC dog licensing dataset, we make a line chart with
+the license issued date to find out whether there is an association
+between bite rate and license.
+
 The three datasets have a common variable: borough. Therefore, we will
 use three histograms to show the counts of dog licenses, dog bite, and
 dog run based on the boroughs separately. We will also analyze the data
