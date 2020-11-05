@@ -35,3 +35,34 @@ run.
 We make a pie chart to show the proportions of different genders in the
 biting dogs and another one to show the proportions of different breeds.
 Thus we can analyze if the dog bite is associated with gender and breed.
+
+Our major challenges are large size of datasets with a large amount of
+missing values, finding a common variable to analyze/compare three
+tables, converting zipcodes into boroughs in order to match data.
+
+### Planned timeline:
+
+Nov 7-13: submit proposal, and project review meeting
+
+Nov14-17: get three datasets tidy
+
+Nov18-24: analyze datasets, make plots and write report
+
+Nov25-Dec1: revise report and make web pages
+
+Dec2-Dec4: make a video
+
+Dec 5: submit final work
+
+(Group meeting: Every Thursday 9.30 pm)
+
+### Anticipated data sources
+
+Dog bite dataset:  
+<a href="https://data.cityofnewyork.us/Health/DOHMH-Dog-Bite-Data/rsgh-akpg" class="uri">https://data.cityofnewyork.us/Health/DOHMH-Dog-Bite-Data/rsgh-akpg</a>
+
+NYC dog licensing dataset:
+<a href="https://data.cityofnewyork.us/Health/NYC-Dog-Licensing-Dataset/nu7n-tubp" class="uri">https://data.cityofnewyork.us/Health/NYC-Dog-Licensing-Dataset/nu7n-tubp</a>
+
+Dog runs and off-leash Areas dataset:
+<a href="https://data.cityofnewyork.us/Recreation/Directory-of-Dog-Runs-and-Off-Leash-Areas/ipbu-mtcs" class="uri">https://data.cityofnewyork.us/Recreation/Directory-of-Dog-Runs-and-Off-Leash-Areas/ipbu-mtcs</a>
