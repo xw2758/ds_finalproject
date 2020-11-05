@@ -1,4 +1,4 @@
-final project proposal
+Final Project Proposal
 ================
 
 ### The group members (names and UNIs):
@@ -31,3 +31,7 @@ use three histograms to show the counts of dog licenses, dog bite, and
 dog run based on the boroughs separately. We will also analyze the data
 with the different policies in different areas, i.e. off-leash vs. dog
 run.
+
+We make a pie chart to show the proportions of different genders in the
+biting dogs and another one to show the proportions of different breeds.
+Thus we can analyze if the dog bite is associated with gender and breed.
