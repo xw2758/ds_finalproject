@@ -1,4 +1,4 @@
-final project proposal
+Final Project Proposal
 ================
 
 ### The group members (names and UNIs):

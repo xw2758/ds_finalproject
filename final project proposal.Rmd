@@ -1,5 +1,5 @@
 ---
-title: "final project proposal"
+title: "Final Project Proposal"
 output: github_document
 ---
 
