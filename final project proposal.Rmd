@@ -8,50 +8,38 @@ output: github_document
 Shuhong Xiang(sx2289), Xinyi Wang(xw2759), Ling Tuo(lt2812), Zhixing Wu(zw2709), Yali Zhai(yz3956)
 
 ### The tentative project title: 
-Dog Bite Analysis in NYC
+
+Dog Lifetime License Analysis in Allegheny County in PA
+
 
 ### The motivation for this project 
 
-The phenomenon of dog bite seems to be uncommon nowadays, which might make some people be afraid of dogs. In addition, the severe consequence of dog bite such as physical injuries and potential diseases has aroused wide public concern. This project is designed to analyze potential associated indicators for the dog bite.
-
+Dog license acquisition seems to be complicated by states but may assist decreasing dog bites efficiently and make it safer for people to keep dogs. We take Allegheny County, PA as an example since they have special regulations of dog lifetime licenses. This project is designed to analyze potential associated indicators and distributions of the dog life license.
 
 
 ### The intended final products/the planned analyses/visualization
 
-From the dog bite dataset, we will utilize data of bite to figure out the distribution and analyze the trend of bite rate by making a histogram. From the NYC dog licensing dataset, we make a line chart with the license issued date to find out whether there is an association between bite rate and license.
+The dog lifetime license has four types, which are Lifetime Male or Female Dog, Lifetime Senior Citizen Female or Male Dog, Lifetime Spayed Female or Neutered Male Dog and Lifetime Senior Citizen Female and Male Gog,  according to the price from high to low. We use a bar chart to show the count of each type to study the association between the license types and price.
+The licence valid date could be analysed using line charts to show the changing trend. The four license types based on price considerations could be compared throughout the time period. Additionally, time of valid date would be studied to show owners’ preference for AM or PM transactions.
+We are going to draw a histogram to find out the most popular color (if the dog has more than one color, it will be categorized as “mix”) of dogs in  Allegheny County. According to zipcodes, a heatmap can be used to visualize where people prefer to get their dogs lifetime lienced.
 
+Our major challenge is the large size of datasets, we need to find some reasonable criterias to filter the valid data. Also, for the dog breed, we need to create a new category under color called “mixed” to replace the multiple combinations of different colors. 
 
-The three datasets have a common variable: borough. Therefore, we will use three 
-histograms to show the counts of dog licenses, dog bite, and dog run based on 
-the boroughs separately. We will also analyze the data with the different 
-policies in different areas, i.e. off-leash vs. dog run.  
-
-We make a pie chart to show the proportions of different genders in the biting dogs and another one to show the proportions of different breeds. Thus we can analyze if the dog bite is associated with gender and breed.
-
-Our major challenges are large size of datasets with a large amount of missing values, finding a common variable to analyze/compare three tables, converting zipcodes into boroughs in order to match data.
 
 ### Planned timeline: 
-Nov 7-13:  submit proposal, and project review meeting
+Nov 7-18:  submit proposal, and project review meeting
 
-Nov14-17: get three datasets tidy
+Nov 18-24: get a tidy dataset, analyze datasets, make plots and write report
 
-Nov18-24: analyze datasets, make plots and write report
+Nov 25-Dec 1: revise report and make web pages
 
-Nov25-Dec1: revise report and make web pages
-
-Dec2-Dec4: make a video
+Dec 2-Dec 4: make a video
 
 Dec 5: submit final work
 
 (Group meeting: Every Thursday 9.30 pm)
 
 ### Anticipated data sources
-Dog bite dataset:           
-https://data.cityofnewyork.us/Health/DOHMH-Dog-Bite-Data/rsgh-akpg
 
-NYC dog licensing dataset: 
-https://data.cityofnewyork.us/Health/NYC-Dog-Licensing-Dataset/nu7n-tubp
-
-Dog runs and off-leash Areas dataset: 
-https://data.cityofnewyork.us/Recreation/Directory-of-Dog-Runs-and-Off-Leash-Areas/ipbu-mtcs
+http://infoportal.alleghenycounty.us/dogdata/default.aspx
 
