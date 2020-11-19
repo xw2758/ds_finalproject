@@ -21,9 +21,9 @@ Dog license acquisition seems to be complicated by states but may assist decreas
 
 The dog lifetime license has four types, which are Lifetime Male or Female Dog, Lifetime Senior Citizen Female or Male Dog, Lifetime Spayed Female or Neutered Male Dog and Lifetime Senior Citizen Female and Male Gog,  according to the price from high to low. We use a bar chart to show the count of each type to study the association between the license types and price.
 The licence valid date could be analysed using line charts to show the changing trend. The four license types based on price considerations could be compared throughout the time period. Additionally, time of valid date would be studied to show owners’ preference for AM or PM transactions.
-We are going to draw a histogram to find out the most popular color (if the dog has more than one color, it will be categorized as “mix”) of dogs in  Allegheny County. According to zipcodes, a heatmap can be used to visualize where people prefer to get their dogs lifetime lienced.
+We are going to draw a histogram to find out the most popular color (if the dog has more than one color, it will be categorized as “mix”) of dogs in  Allegheny County. According to zipcode, a heatmap can be used to visualize where people prefer to get their dogs lifetime license.
 
-Our major challenge is the large size of datasets, we need to find some reasonable criterias to filter the valid data. Also, for the dog breed, we need to create a new category under color called “mixed” to replace the multiple combinations of different colors. 
+Our major challenge is the large size of the datasets, we need to find some reasonable criteria to filter the valid data. Also, for the dog breed, we need to create a new category under color called “mixed” to replace the multiple combinations of different colors. 
 
 
 ### Planned timeline: 
@@ -42,4 +42,6 @@ Dec 5: submit final work
 ### Anticipated data sources
 
 http://infoportal.alleghenycounty.us/dogdata/default.aspx
+
+
 

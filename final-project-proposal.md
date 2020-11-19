@@ -33,13 +33,13 @@ Additionally, time of valid date would be studied to show owners’
 preference for AM or PM transactions. We are going to draw a histogram
 to find out the most popular color (if the dog has more than one color,
 it will be categorized as “mix”) of dogs in Allegheny County. According
-to zipcodes, a heatmap can be used to visualize where people prefer to
-get their dogs lifetime lienced.
+to zipcode, a heatmap can be used to visualize where people prefer to
+get their dogs lifetime license.
 
-Our major challenge is the large size of datasets, we need to find some
-reasonable criterias to filter the valid data. Also, for the dog breed,
-we need to create a new category under color called “mixed” to replace
-the multiple combinations of different colors.
+Our major challenge is the large size of the datasets, we need to find
+some reasonable criteria to filter the valid data. Also, for the dog
+breed, we need to create a new category under color called “mixed” to
+replace the multiple combinations of different colors.
 
 ### Planned timeline:
 
@@ -58,4 +58,4 @@ Dec 5: submit final work
 
 ### Anticipated data sources
 
-<a href="http://infoportal.alleghenycounty.us/dogdata/default.aspx" class="uri">http://infoportal.alleghenycounty.us/dogdata/default.aspx</a>
+<http://infoportal.alleghenycounty.us/dogdata/default.aspx>
