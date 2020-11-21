@@ -13,6 +13,18 @@ tidy_data =
   )
 ```
 
+# breed
+
+We separate the breed into two types, mixed and pure. All the breeds
+whose name contains “mix” are belong to mixed. Others are pure.
+
+``` r
+tidy_data = tidy_data %>% 
+  mutate(
+    breed_type = ifelse(str_detect(breed, "MIX"), "MIXED", "PURE")
+  )
+```
+
 # zipcode
 
 There is some zipcode that are not in Allegheny County, such as 16229,
