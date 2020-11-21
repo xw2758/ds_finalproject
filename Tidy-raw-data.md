@@ -3,6 +3,11 @@ Tidy raw data
 
 # license\_type
 
+In terms of the license type, we delete three types: “Dog Lifetime
+Duplicate”, “Dog Out of County Transfer - Lifetime”, “Dog Inter County
+Transfer - Lifetime”. We mainly focus on the remaining four types of
+licenses with male and female numbers combined together.
+
 ``` r
 tidy_data = 
  tidy_data %>% 
