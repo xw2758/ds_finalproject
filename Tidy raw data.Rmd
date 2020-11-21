@@ -16,7 +16,11 @@ tidy_data = raw_data %>%
 
 # license_type
 
-In terms of the license type, we delete three types: "Dog Lifetime Duplicate", "Dog Out of County Transfer - Lifetime", "Dog Inter County Transfer - Lifetime". We mainly focus on the remaining four types of licenses with male and female numbers combined together.
+In terms of the license type, we delete three types: "Dog Lifetime Duplicate", "Dog Out of County Transfer - Lifetime", "Dog Inter County Transfer - Lifetime". 
+
+We mainly focus on the remaining four types of licenses with male and female numbers combined together.
+
+Since the Neutered Male and Spayed Female could be classified into one situation, then we use "N/S" to denote the Neutered Male and Spayed Female.
 
 ```{r}
 tidy_data = 
@@ -24,9 +28,16 @@ tidy_data =
  filter(!(license_type %in% c("Dog Lifetime Duplicate", "Dog Out of County Transfer - Lifetime", "Dog Inter County Transfer - Lifetime"))) %>% 
   mutate(
     license_type = str_replace(license_type, "Male", ""),
-    license_type = str_replace(license_type, "Female", "")
+    license_type = str_replace(license_type, "Female", ""),
+    license_type = str_replace(license_type, "Neutered", "N/S"),
+    license_type = str_replace(license_type, "Spayed", "N/S")
   )
 
+
+tidy_data = 
+ tidy_data %>% 
+ count(license_type) %>% 
+ arrange(desc(n))
 ```
 
 # breed
