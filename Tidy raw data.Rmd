@@ -39,12 +39,27 @@ tidy_data = tidy_data %>%
   )
 ```
 
+# Color
+
+Due to the large quantity of the dataset, the number of "." and "OTHER" is comparatively less so we decide to delete them. Values of "BLACK WITH WHITE" sounds equal to the value of "WHITE/BLACK", hence, we recode them to be the same. Since there are various color types, we are able to look for the TOP 5~10 colors as well as proportion of the number of colors. In this case, we suggest that "MULTI", "TRI-COLOR" and other specific 3 colors to be having 3+ colors then we create a new variable "ncolor" to reserve these information.
+
+```{r}
+tidy_data = tidy_data %>% 
+  drop_na(color) %>% 
+  filter(color != "." & color != "OTHER") %>% 
+  mutate(color = recode(color, `BLACK WITH WHITE` = "WHITE/BLACK", 
+                        `MULTI` = "MULTI//", `TRI-COLOR` = "TRI-COLOR//"),
+    ncolor = str_count(color, pattern = "/") + 1,
+    ncolor = as.character(ncolor),
+    ncolor = recode(ncolor, `3` = "3+"))
+```
+
 # zipcode
 
 There is some zipcode that are not in Allegheny County, such as 16229, 46845 and so on. We only select zipcode of cities that belong to Allegheny County
 
 ```{r}
-tidy_zip_data = tidy_data %>% 
+tidy_data = tidy_data %>% 
   filter(owner_zip < 16000)
 ```
 
