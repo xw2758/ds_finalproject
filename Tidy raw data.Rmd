@@ -32,12 +32,6 @@ tidy_data =
     license_type = str_replace(license_type, "Neutered", "N/S"),
     license_type = str_replace(license_type, "Spayed", "N/S")
   )
-
-
-tidy_data = 
- tidy_data %>% 
- count(license_type) %>% 
- arrange(desc(n))
 ```
 
 # breed

@@ -6,15 +6,23 @@ license\_type
 
 In terms of the license type, we delete three types: “Dog Lifetime
 Duplicate”, “Dog Out of County Transfer - Lifetime”, “Dog Inter County
-Transfer - Lifetime”. We mainly focus on the remaining four types of
-licenses with male and female numbers combined together.
+Transfer - Lifetime”.
+
+We mainly focus on the remaining four types of licenses with male and
+female numbers combined together.
+
+Since the Neutered Male and Spayed Female could be classified into one
+situation, then we use “N/S” to denote the Neutered Male and Spayed
+Female.
 
     tidy_data = 
      tidy_data %>% 
      filter(!(license_type %in% c("Dog Lifetime Duplicate", "Dog Out of County Transfer - Lifetime", "Dog Inter County Transfer - Lifetime"))) %>% 
       mutate(
         license_type = str_replace(license_type, "Male", ""),
-        license_type = str_replace(license_type, "Female", "")
+        license_type = str_replace(license_type, "Female", ""),
+        license_type = str_replace(license_type, "Neutered", "N/S"),
+        license_type = str_replace(license_type, "Spayed", "N/S")
       )
 
 breed
@@ -58,3 +66,45 @@ Allegheny County
 
     tidy_data = tidy_data %>% 
       filter(owner_zip < 16000)
+
+Validdate
+=========
+
+We remained the years of the data and convert the specific time to AM
+and PM:
+
+    validdate = tidy_data %>% 
+      drop_na(valid_date)  
+
+    validdate_df =  as.character(validdate$valid_date) 
+    validdate_df =  tibble(validdate_df)
+
+    tidy_validdata_df =
+      validdate_df %>%
+      separate(validdate_df, into = c("Date","Time"), sep = 11)
+
+    tidy_year = 
+      tidy_validdata_df %>%
+      select(Date) %>%
+      separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
+      select(Year)
+
+    time_PM = 
+      tidy_validdata_df %>%
+      separate(Time, into = c("Time","min_sec"), sep = 2) %>%
+      select(Time) %>%
+      filter(Time>12) %>%  
+      filter(Time != "00")
+
+    time_AM = 
+      tidy_validdata_df %>%
+      separate(Time, into = c("Time","min_sec"), sep = 2) %>%
+      select(Time) %>%
+      filter(Time<12) %>%  
+      filter(Time != "00")
+
+    time_NA = 
+      tidy_validdata_df %>%
+      separate(Time, into = c("Time","min_sec"), sep = 2) %>%
+      select(Time) %>%
+      filter(Time=="00")
