@@ -80,7 +80,7 @@ We remained the years of the data and convert the specific time to AM and PM:
 
 ```{r}
 validdate = tidy_data %>% 
-  drop_na(valid_date) 
+  drop_na(valid_date)  
 
 validdate_df =  as.character(validdate$valid_date) 
 validdate_df =  tibble(validdate_df)
@@ -89,38 +89,30 @@ tidy_validdata_df =
   validdate_df %>%
   separate(validdate_df, into = c("Date","Time"), sep = 11)
 
+tidy_year = 
+  tidy_validdata_df %>%
+  select(Date) %>%
+  separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
+  select(Year)
+
 time_PM = 
   tidy_validdata_df %>%
   separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Date,  Time) %>%
+  select(Time) %>%
   filter(Time>12) %>%  
-  filter(Time != "00")%>%
-  mutate(time_PM, Time = "PM") %>%
-  select(Date, Time) %>%
-  separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
-  select(Year, Time)
+  filter(Time != "00")
 
 time_AM = 
   tidy_validdata_df %>%
   separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Date,  Time) %>%
+  select(Time) %>%
   filter(Time<12) %>%  
-  filter(Time != "00")%>%
-  mutate(time_AM, Time = "AM") %>%
-  select(Date, Time) %>%
-  separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
-  select(Year, Time)
+  filter(Time != "00")
 
 time_NA = 
   tidy_validdata_df %>%
   separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Date,  Time) %>%
-  filter(Time=="00") %>%
-  mutate(time_NA, Time = "NA")  %>%
-  select(Date, Time) %>%
-  separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
-  select(Year, Time)
-
-tidy_validdate = combine(time_AM, time_PM, time_NA)
+  select(Time) %>%
+  filter(Time=="00")
 ```
 
