@@ -1,7 +1,7 @@
 Tidy raw data
 ================
 
-# license\_type
+# License\_type
 
 In terms of the license type, we delete three types: “Dog Lifetime
 Duplicate”, “Dog Out of County Transfer - Lifetime”, “Dog Inter County
@@ -26,7 +26,7 @@ tidy_data =
   )
 ```
 
-# breed
+# Breed
 
 We separate the breed into two types, mixed and pure. All the breeds
 whose name contains “mix” are belong to mixed. Others are pure.
@@ -60,7 +60,7 @@ tidy_data = tidy_data %>%
     ncolor = recode(ncolor, `3` = "3+"))
 ```
 
-# zipcode
+# Zipcode
 
 There is some zipcode that are not in Allegheny County, such as 16229,
 46845 and so on. We only select zipcode of cities that belong to
@@ -71,25 +71,25 @@ tidy_data = tidy_data %>%
   filter(owner_zip < 16000)
 ```
 
-# Validdate
+# Valid date
 
-We remained the years of the data and convert the specific time to AM
-and PM:
+We remain the years of the validation data and convert the specific time
+to AM and PM of a day:
 
 ``` r
 tidy_data = tidy_data %>% 
-  drop_na(valid_date) %>%
   separate(valid_date, into = c("day", "mon", "year" ), sep = "/") %>%
-  select(license_type, breed, color, owner_zip, year, breed_type) %>%
+  select(license_type, breed, color, owner_zip, breed_type, year) %>%
   separate(year, into = c("valid_year", "valid_time"), sep = 4) %>%
   mutate(
+    valid_year = as.integer(valid_year),
     valid_time = str_remove_all(valid_time," "),
     valid_time = gsub("[[:digit:]]","", valid_time),
     valid_time = str_remove_all(valid_time,":")
   ) 
 ```
 
-# Make the tidy R data
+# Make the tidy Rdata for further usage
 
 ``` r
 save(tidy_data, file = "tidy_data.Rdata")
