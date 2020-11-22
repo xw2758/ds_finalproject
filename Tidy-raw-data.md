@@ -77,39 +77,20 @@ We remained the years of the data and convert the specific time to AM
 and PM:
 
 ``` r
-validdate = tidy_data %>% 
-  drop_na(valid_date)  
+tidy_data = tidy_data %>% 
+  drop_na(valid_date) %>%
+  separate(valid_date, into = c("day", "mon", "year" ), sep = "/") %>%
+  select(license_type, breed, color, owner_zip, year, breed_type) %>%
+  separate(year, into = c("valid_year", "valid_time"), sep = 4) %>%
+  mutate(
+    valid_time = str_remove_all(valid_time," "),
+    valid_time = gsub("[[:digit:]]","", valid_time),
+    valid_time = str_remove_all(valid_time,":")
+  ) 
+```
 
-validdate_df =  as.character(validdate$valid_date) 
-validdate_df =  tibble(validdate_df)
+# Make the tidy R data
 
-tidy_validdata_df =
-  validdate_df %>%
-  separate(validdate_df, into = c("Date","Time"), sep = 11)
-
-tidy_year = 
-  tidy_validdata_df %>%
-  select(Date) %>%
-  separate(Date, into = c("Year", "Month_Day"), sep = 4) %>%
-  select(Year)
-
-time_PM = 
-  tidy_validdata_df %>%
-  separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Time) %>%
-  filter(Time>12) %>%  
-  filter(Time != "00")
-
-time_AM = 
-  tidy_validdata_df %>%
-  separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Time) %>%
-  filter(Time<12) %>%  
-  filter(Time != "00")
-
-time_NA = 
-  tidy_validdata_df %>%
-  separate(Time, into = c("Time","min_sec"), sep = 2) %>%
-  select(Time) %>%
-  filter(Time=="00")
+``` r
+save(tidy_data, file = "tidy_data.Rdata")
 ```
