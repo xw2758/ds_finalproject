@@ -75,7 +75,7 @@ We remain the years of the validation data and convert the specific time to AM a
 ```{r}
 tidy_data = tidy_data %>% 
   separate(valid_date, into = c("day", "mon", "year" ), sep = "/") %>%
-  select(license_type, breed, color, owner_zip, breed_type, year) %>%
+  select(license_type, breed, color, ncolor, owner_zip, breed_type, year) %>%
   separate(year, into = c("valid_year", "valid_time"), sep = 4) %>%
   mutate(
     valid_year = as.integer(valid_year),
