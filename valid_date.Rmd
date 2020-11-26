@@ -1,0 +1,77 @@
+---
+title: "Validation Date of Lifetime Dog Licenses in Allegheny County"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(ggridges)
+library(patchwork)
+
+knitr::opts_chunk$set(
+	echo = FALSE,
+	warning = FALSE,
+	fig.width = 12, 
+  fig.height = 8,
+	fig.path='Figs/',
+  out.width = "90%"
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+
+load("tidy_data.Rdata")
+```
+
+# About Valid date
+
+Data about the validation date contains the year and the time of validation date. We analyze the the trend of lifetime dog licenses over 17 years and the preferred time for people obtaining the lifetime licenses. 
+
+# Analysis on Trend over Years from 2003 to 2020
+
+```{r}
+plot_valid_year =
+ tidy_data %>%
+ group_by(valid_year) %>%
+ count(valid_year) %>%
+ggplot(
+ aes(x = valid_year, y = n, fill = valid_year))+
+  geom_point()+
+  geom_smooth(formula = y ~ x, method = loess, se = F)+
+ labs(
+  x = "Year of Valid Date",
+    y = "Number of Lifetime Licenses",
+    title = "Number of Lifetime Licenses from 2003 to 2020 "
+ )
+plot_valid_year
+```
+
+From the plot above, the number of the lifetime dog licenses gradually increased from 2003 to the 2019 with a linear relationship. In 2020, the number of the lifetime licenses decreased a little, which might result from the Covid-19. 
+
+# Analysis on the Prefered Time to Obtain a Dog Lifetime License
+
+```{r}
+plot_valid_time =
+ tidy_data %>%
+ drop_na(valid_time) %>%
+ group_by(valid_time) %>%
+ count(valid_time) %>%
+ggplot(
+ aes(x = valid_time, y = n, fill = valid_time))+
+ geom_bar(stat = "identity")+
+ labs(
+  x = "Time of Valid Date",
+    y = "Number of Lifetime Licenses",
+    title = "Prefered Time to Obtain Dog Lifetime Licenses")
+plot_valid_time
+```
+
+From the bar chart above, people tend to obtain the lifetime licenses on PM. The people obtain the lifetime licenses is nearly double the people on AM. 
+.
