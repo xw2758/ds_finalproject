@@ -115,19 +115,24 @@ plot1
 
 * Price Analysis
 
+Thirdly, we calculate the total price for the four types based on the single price.
 
+The type "Dog Lifetime" has most expensive price per license, but the "Dog Lifetime N/S" group has largest total prices due to its large counts.
 
 ```{r}
 price_df = 
   tibble(
-    license_type = c("Dog Lifetime", "Dog Lifetime N/S", "Dog Senior Lifetime", "Dog Senior Lifetime N/S"),
-    price = c(51.5,31.5,31.5,21.5)
+    total = c(1917,24692,496,4560),
+    single_price = c(51.5,31.5,31.5,21.5)
   )
 
 price_ = 
-  left_join(table1, price_df, by = "license_type") %>% 
-  select(-Female, -Male) 
+  left_join(table1, price_df, by = "total") %>% 
+  select(-Female, -Male) %>% 
+  mutate(total_price = total * single_price)
   
+price_ %>% 
+  knitr::kable()
 ```
 
 

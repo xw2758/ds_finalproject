@@ -92,10 +92,10 @@ table1 =
  count(license_type, sex) %>% 
  pivot_wider(names_from = sex, values_from = n) %>% 
   
- mutate(total = Female + Male) %>% 
- knitr::kable()
+ mutate(total = Female + Male) 
  
-table1
+table1 %>% 
+  knitr::kable()
 ```
 
 | license\_type           | Female |  Male | total |
@@ -131,18 +131,35 @@ plot1
 
   - Price Analysis
 
-<!-- end list -->
+Thirdly, we calculate the total price for the four types based on the
+single price.
+
+The type “Dog Lifetime” has most expensive price per license, but the
+“Dog Lifetime N/S” group has largest total prices due to its large
+counts.
 
 ``` r
 price_df = 
   tibble(
-    license_type = c("Dog Lifetime", "Dog Lifetime N/S", "Dog Senior Lifetime", "Dog Senior Lifetime N/S"),
-    price = c(51.5,31.5,31.5,21.5)
+    total = c(1917,24692,496,4560),
+    single_price = c(51.5,31.5,31.5,21.5)
   )
+
+price_ = 
+  left_join(table1, price_df, by = "total") %>% 
+  select(-Female, -Male) %>% 
+  mutate(total_price = total * single_price)
+  
+price_ %>% 
+  knitr::kable()
 ```
 
-price\_ = left\_join(table1, price\_df, by = “license\_type”) %\>%
-select(-Female, -Male)
+| license\_type           | total | single\_price | total\_price |
+| :---------------------- | ----: | ------------: | -----------: |
+| Dog Lifetime            |  1917 |          51.5 |      98725.5 |
+| Dog Lifetime N/S        | 24692 |          31.5 |     777798.0 |
+| Dog Senior Lifetime     |   496 |          31.5 |      15624.0 |
+| Dog Senior Lifetime N/S |  4560 |          21.5 |      98040.0 |
 
   - Sex & License type Analysis
 
