@@ -82,10 +82,10 @@ table1 =
  count(license_type, sex) %>% 
  pivot_wider(names_from = sex, values_from = n) %>% 
   
- mutate(total = Female + Male) %>% 
- knitr::kable()
+ mutate(total = Female + Male) 
  
-table1
+table1 %>% 
+  knitr::kable()
 ```
 
 
@@ -124,13 +124,13 @@ price_df =
     price = c(51.5,31.5,31.5,21.5)
   )
 
-
-```
-
 price_ = 
   left_join(table1, price_df, by = "license_type") %>% 
   select(-Female, -Male) 
   
+```
+
+
   
   
   
