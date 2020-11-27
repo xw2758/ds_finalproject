@@ -1,0 +1,78 @@
+---
+title: "zipcode"
+output: html_document
+---
+
+```{r include=FALSE}
+load(file = "tidy_data.Rdata")
+library(tidyverse)
+
+library(plotly)
+library(rgdal)
+library(maps)
+
+library(devtools)
+library(leaflet)
+library(BAMMtools)
+library(spdep)
+library(maptools)
+```
+
+```{r include=FALSE}
+licence_count <- tidy_data %>% 
+ mutate(zipcode = as.character(owner_zip)) %>% 
+  group_by(zipcode) %>%
+  summarize(n_licence = n())
+```
+
+```{r include=FALSE}
+dat = readOGR(dsn = "zipcode_data/cb_2013_us_zcta510_500k/cb_2013_us_zcta510_500k.shp") 
+
+dat = dat[dat$ZCTA5CE10 %in% unique(licence_count$zipcode),]
+
+dat@data <- left_join(dat@data,licence_count, by = c('ZCTA5CE10' = 'zipcode'))
+dat$n_licence[is.na(dat$n_licence)] <- 0
+
+
+# CRS setting
+zip_map_crs <- spTransform(dat, CRS("+init=epsg:4326"))
+```
+
+```{r include=FALSE}
+# Layout 
+# format of the label that pops up for each polygon
+label_popup <- paste0(
+  "<strong>Zip code: </strong>",
+  dat$ZCTA5CE10,
+  "<br><strong>Number of licence: </strong>",
+  dat$n_licence
+)
+
+# get jenks natural break for dog bites
+getJenksBreaks(dat$n_licence, 6)
+
+
+# set bins
+licence_bins <- c(0, 136, 440, 730, 1329, 1852)
+
+# set pals
+licence_pal <- colorBin('Greens', bins = licence_bins, na.color = '#aaff56')
+```
+
+```{r echo=FALSE}
+leaflet::leaflet(data = zip_map_crs) %>% 
+  addProviderTiles('CartoDB.Positron') %>% 
+  addPolygons(fillColor = ~licence_pal(n_licence),
+              fillOpacity = 0.8,
+              color = "#BDBDC3",
+              weight = 1,
+              popup = label_popup,
+              highlightOptions = highlightOptions(color = "black", weight = 2,
+      bringToFront = TRUE)) %>% 
+  addLegend('bottomleft',
+            pal = licence_pal,
+            values = ~n_licence,
+            title = 'Number of licence by zip code',
+            opacity = 1)
+```
+
