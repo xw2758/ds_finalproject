@@ -1,0 +1,69 @@
+---
+title: 'license_type over time'
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+runtime: shiny 
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(tidyverse)
+library(plotly)
+library(tidyverse)
+library(plotly)
+
+load("tidy_data.Rdata")
+```
+
+
+
+Licenses Over Time
+===================================== 
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+
+```{r for_sidebar}
+# Pull list of breed from tidy_data
+
+breed = tidy_data %>% distinct(breed) %>% pull()
+
+
+# Create checkbox input
+checkboxGroupInput("breed_choice", label = h3("Select breed"),
+choices = breed, selected = "")
+
+
+
+```
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+### license
+
+```{r }
+# license over time
+
+renderPlotly({ 
+
+plot_data = 
+  tidy_data %>%
+    filter(
+      breed == input[["breed_choice"]]
+    ) 
+
+plot_data %>% 
+    count(year) %>% 
+    plot_ly(x = valid_year, y = n, type="scatter", mode="lines+markers", color = ~breed) %>% 
+    layout(title = "License counts Over Time")
+
+})
+
+
+```
