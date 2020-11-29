@@ -9,9 +9,22 @@ runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(tidyverse)
+library(plotly)
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(rgdal)
+library(maps)
+library(devtools)
+library(leaflet)
+library(maptools)
+library(BAMMtools)
+library(patchwork)
 
-
-
+load("tidy_data.Rdata")
 ```
 
 
