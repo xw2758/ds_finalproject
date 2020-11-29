@@ -44,7 +44,7 @@ zip_map_crs <- spTransform(dat, CRS("+init=epsg:4326"))
 label_popup <- paste0(
   "<strong>Zip code: </strong>",
   dat$ZCTA5CE10,
-  "<br><strong>Number of licence: </strong>",
+  "<br><strong>Number of license: </strong>",
   dat$n_licence
 )
 
@@ -59,6 +59,8 @@ licence_bins <- c(0, 136, 440, 730, 1329, 1852)
 licence_pal <- colorBin('Greens', bins = licence_bins, na.color = '#aaff56')
 ```
 
+The map shows the number of license by zip code. When clicking on it, you can see zip cde and its number of license. It shows that people in Pittsburgh hold less licenses, while people in Ross Township and Bethel Park are holding the largest number of lifetime licenses, which may indicates that people in those places are likely to keep pet dogs.
+
 ```{r echo=FALSE}
 leaflet::leaflet(data = zip_map_crs) %>% 
   addProviderTiles('CartoDB.Positron') %>% 
@@ -72,7 +74,6 @@ leaflet::leaflet(data = zip_map_crs) %>%
   addLegend('bottomleft',
             pal = licence_pal,
             values = ~n_licence,
-            title = 'Number of licence by zip code',
+            title = 'Number of license by zip code',
             opacity = 1)
 ```
-
