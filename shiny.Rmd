@@ -28,6 +28,7 @@ load("tidy_data.Rdata")
 ```
 
 
+
 Licenses Over Time
 ===================================== 
 
@@ -36,6 +37,14 @@ Column {.sidebar}
 
 
 ```{r for_sidebar}
+# Pull list of breed from tidy_data
+
+breed = tidy_data %>% distinct(breed) %>% pull()
+
+
+# Create checkbox input
+checkboxGroupInput("breed_choice", label=h3("Select breed"),
+choices = breed, selected = "")
 
 
 
@@ -47,12 +56,23 @@ Column {.tabset}
 ### license
 
 ```{r }
-
-
 # license over time
 
+renderPlotly({ 
 
+plot_data = 
+  tidy_data %>%
+    filter(
+      neighborhood == input[["breed_choice"]]
+    ) 
+
+plot_data %>% 
+    group_by() %>%
+    ungroup() %>% 
+    plot_ly(x=~, y=~, type="scatter", mode="lines+markers", color = ~neighborhood) %>% 
+    layout(title="License counts Over Time")
+
+})
 
 
 ```
-
