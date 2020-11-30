@@ -1,15 +1,17 @@
 ---
-title: "Dog Lifetime License Analysis in Allegheny County in PA"
+title: <center>Dog Lifetime License Analysis in Allegheny County in PA
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  html_document
 ---
-
-Dog license acquisition seems to be complicated by different policies in different states. In PA, there exists a convenient lifetime license type. We take Allegheny County in PA as an example for analysis the lifetime dog license. (There are so much dog people in the U.S.!) In this project, we analyze the various dog license types with breed, color, zipcode and validation date. 
-
-
+<h2 style="text-align: center;" markdown="1">Data Science Final Project</h2>
+<h6 style="text-align: center;" markdown="1">Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixing Wu(zw2709), Yali Zhai(yz3956)</h6>
 
 <img src= "Licensesyet.jpg" style = "width:100%">
 
+## Overview
 
+Dog license acquisition seems to be complicated by different policies in different states. In PA, there exists a convenient lifetime license type. We take Allegheny County in PA as an example for analysis the lifetime dog license. (There are so much dog people in the U.S.!) In this project, we analyze the various dog license types with breed, color, zipcode and validation date. 
+
+## Dataset
+
+The dataset we used in this project is sourced from [alleghenycounty.us](http://infoportal.alleghenycounty.us/dogdata/default.aspx). Specifically, we obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.

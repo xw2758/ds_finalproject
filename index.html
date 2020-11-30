@@ -11,18 +11,15 @@
 
 
 
-<title>Dog Lifetime License Analysis in Allegheny County in PA</title>
+<title>index.utf8</title>
 
 <script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -254,69 +251,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -324,16 +258,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -350,20 +274,42 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        
+        <li>
+  <a href="video.html">Screencast</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="about.html">About</a>
+  <a href="report.html">Project report</a>
 </li>
-<li>
-  <a href="mailto:&lt;you@youremail.com&gt;">
-    <span class="fa fa-envelope fa-lg"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-telegram fa-lg"></span>
      
+    Contact Us
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mailto:&lt;sx2289@cumc.columbia.edu&gt;">Shuhong Xiang</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;xw2758@cumc.columbia.edu&gt;">Xinyi Wang</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;lt2812@cumc.columbia.edu&gt;">Ling Tuo</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;zw2709@cumc.columbia.edu&gt;">Zhixing Wu</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;yz3956@cumc.columbia.edu&gt;">Yali Zhai</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="http://github.com/&lt;YOUR_GH_NAME&gt;/">
+  <a href="http://github.com/xw2758/ds_finalproject">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -377,18 +323,30 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Dog Lifetime License Analysis in Allegheny County in PA</h1>
+<h1 class="title toc-ignore"><center>
+Dog Lifetime License Analysis in Allegheny County in PA</h1>
 
 </div>
 
 
-<p>Dog license acquisition seems to be complicated by different policies in different states. In PA, there exists a convenient lifetime license type. We take Allegheny County in PA as an example for analysis the lifetime dog license. (There are so much dog people in the U.S.!) In this project, we analyze the various dog license types with breed, color, zipcode and validation date.</p>
+<h2 style="text-align: center;">
+Data Science Final Project
+</h2>
+<h6 style="text-align: center;">
+Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixing Wu(zw2709), Yali Zhai(yz3956)
+</h6>
 <p><img src= "Licensesyet.jpg" style = "width:100%"></p>
-
-
-
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Dog license acquisition seems to be complicated by different policies in different states. In PA, there exists a convenient lifetime license type. We take Allegheny County in PA as an example for analysis the lifetime dog license. (There are so much dog people in the U.S.!) In this project, we analyze the various dog license types with breed, color, zipcode and validation date.</p>
 </div>
+<div id="dataset" class="section level2">
+<h2>Dataset</h2>
+<p>The dataset we used in this project is sourced from <a href="http://infoportal.alleghenycounty.us/dogdata/default.aspx">alleghenycounty.us</a>. Specifically, we obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.</p>
 </div>
+
+
+
 
 </div>
 
@@ -421,32 +379,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

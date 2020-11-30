@@ -67,10 +67,10 @@ plot_data =
     ) 
 
 plot_data %>% 
-    group_by() %>%
-    ungroup() %>% 
-    plot_ly(x=~, y=~, type="scatter", mode="lines+markers", color = ~neighborhood) %>% 
-    layout(title="License counts Over Time")
+  group_by() %>%
+  ungroup() %>% 
+  plot_ly(x=~, y=~, type="scatter", mode="lines+markers", color = ~neighborhood) %>% 
+  layout(title = "License counts Over Time")
 
 })
 
