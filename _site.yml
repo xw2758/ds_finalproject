@@ -1,13 +1,29 @@
-name: "Yay internet!"
+name: "DS_Final"
 output_dir: "."
 navbar:
   title: "Home"
-  right:
-    - text: "About"
-      href: about.html
-    - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
-    - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+right:
+  - text: "Screencast"
+  href: video.html
+  - text: "Project report"
+  href: report.html
+  - text: "Contact Us"
+  icon: fa-telegram fa-lg
+  menu:
+  - text: "Shuhong Xiang"
+  href: mailto:<sx2289@cumc.columbia.edu>
+  - text: "Xinyi Wang"
+  href: mailto:<xw2758@cumc.columbia.edu> 
+  - text: "Ling Tuo"
+  href: mailto:<lt2812@cumc.columbia.edu>
+  - text: "Zhixing Wu"
+  href: mailto:<zw2709@cumc.columbia.edu>
+  - text: "Yali Zhai"
+  href: mailto:<yz3956@cumc.columbia.edu>
+  - icon: fa-github fa-lg
+  href: http://github.com/xw2758/ds_finalproject
 output:
-  html_document
+  html_document:
+  theme: cosmo
+  code_folding: hide
+
