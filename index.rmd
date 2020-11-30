@@ -1,12 +1,15 @@
 ---
-title: "My awesome website"
+title: "Dog Lifetime License Analysis in Allegheny County in PA"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
-# This is Jeff's awesome website
+Dog license acquisition seems to be complicated by different policies in different states. In PA, there exists a convenient lifetime license type. We take Allegheny County in PA as an example for analysis the lifetime dog license. (There are so much dog people in the U.S.!) In this project, we analyze the various dog license types with breed, color, zipcode and validation date. 
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+
+<img src= "Licensesyet.jpg" style = "width:100%">
+
+
