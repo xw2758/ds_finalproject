@@ -5,6 +5,18 @@ navbar:
   left:
     - text: "Screencast"
       href: video.html
+    - text: "Analysis"
+      menu:
+      - text: "Breed"
+        href: breed.html
+      - text: "Color"
+        href: color.html
+      - text: "License Type"
+        href: license_type.html   
+      - text: "Valid date"
+        href: valid_date.html
+      - text: "Zipcode"
+        href: zipcode.html        
   right:
     - text: "Project report"
       href: report.html
