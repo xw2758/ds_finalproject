@@ -1,5 +1,5 @@
 ---
-title: 'license_type over time'
+title: 'license_count over time'
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -36,7 +36,7 @@ breed = tidy_data %>% distinct(breed) %>% pull()
 
 # Create checkbox input
 checkboxGroupInput("breed_choice", label = h3("Select breed"),
-choices = breed, selected = "")
+choices = breed, selected = "MIXED")
 
 
 
@@ -59,8 +59,9 @@ plot_data =
     ) 
 
 plot_data %>% 
-    count(year) %>% 
-    plot_ly(x = valid_year, y = n, type="scatter", mode="lines+markers", color = ~breed) %>% 
+    group_by(breed) %>% 
+    count(valid_year) %>% 
+    plot_ly(x = ~valid_year, y = ~n, color = ~breed, type = "scatter", mode = "lines+markers") %>% 
     layout(title = "License counts Over Time")
 
 })
