@@ -1,6 +1,9 @@
 ---
 title: "Color analysis"
-output: github_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +28,19 @@ scale_colour_discrete = scale_colour_viridis_d()
 scale_fill_discrete = scale_fill_viridis_d()
 ```
 
-```{r}
+In this page, you are able to find some information about 'color' based on the dataset, including analysis of color itself as well as attempts of finding it's potential relationship with breed and license types.
+
+## Adjustments of original data
+
+Due to the large quantity of the dataset, the number of "." and "OTHER" is comparatively less so we decide to delete them. Values of "BLACK WITH WHITE" sounds equal to the value of "WHITE/BLACK", hence, we recode them to be the same. Since there are various color types, we are able to look for the TOP 5~10 colors as well as proportion of the number of colors. In this case, we suggest that "MULTI", "TRI-COLOR" and other specific 3 colors to be having 3+ colors then we create a new variable "ncolor" to reserve these information.
+
+
+## No. dog colors
+
+ - This barplot shows the distribution of number of dog colors in Allegheny County in PA -- the pure color dog have the largest number while mixed of more than 3 colors have the least.
+
+
+```{r echo = FALSE}
 load("tidy_data.Rdata")
 
 n_color = 
@@ -36,17 +51,25 @@ n_color =
   title = "Number of dog colors",
   x = "Number of color",
   y = "Count") + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5))
+
+n_color
 ```
 
-This barplot shows the distribution of number of dog color in Allegheny County in PA -- the pure color dog have the largest number and mixed of more than 3 colors have the least.
 
-```{r}
+
+## Famous colors
+
+
+ - Plots below show several famous color in Allegheny County, including black, brown, white, etc., and the most popular color is black, even in two-color and mixed color groups. 
+
+```{r echo = FALSE}
 color_all = 
   tidy_data %>% 
   count(color) %>% 
   arrange(desc(n)) %>% 
-  top_n(10) %>%
+  top_n(10, n) %>%
   ggplot(aes(x = reorder(color, n), y = n,  fill = n, alpha = 0.8)) +
   geom_bar(stat="identity") +
   coord_flip() +
@@ -54,14 +77,15 @@ color_all =
   title = "Top 10 famous dog colors",
   x = "Count",
   y = "Color") + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5))
 
 color_1 = 
   tidy_data %>% 
   filter(ncolor == "1") %>% 
   count(color) %>% 
   arrange(desc(n)) %>% 
-  top_n(5) %>%
+  top_n(5, n) %>%
   ggplot(aes(x = reorder(color, n), y = n,  fill = n, alpha = 0.8)) +
   geom_bar(stat="identity") +
   coord_flip() +
@@ -69,14 +93,15 @@ color_1 =
   title = "Top 5 famous colors for pure color dogs",
   x = "Count",
   y = "Color") + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5))
 
 color_2 = 
   tidy_data %>% 
   filter(ncolor == "2") %>% 
   count(color) %>% 
   arrange(desc(n)) %>% 
-  top_n(5) %>%
+  top_n(5, n) %>%
   ggplot(aes(x = reorder(color, n), y = n,  fill = n, alpha = 0.8)) +
   geom_bar(stat="identity") +
   coord_flip() +
@@ -84,7 +109,8 @@ color_2 =
   title = "Top 5 famous colors for two-color dogs",
   x = "Count",
   y = "Color") + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5))
 
 color_3 = 
   tidy_data %>% 
@@ -92,7 +118,7 @@ color_3 =
   mutate(color = recode(color, `MULTI//` = "MULTI", `TRI-COLOR//` = "TRI-COLOR")) %>% 
   count(color) %>% 
   arrange(desc(n)) %>% 
-  top_n(5) %>%
+  top_n(5, n) %>%
   ggplot(aes(x = reorder(color, n), y = n, fill = n, alpha = 0.8)) +
   geom_bar(stat="identity") +
   coord_flip() +
@@ -100,46 +126,84 @@ color_3 =
   title = "Top 5 famous colors for mixed color dogs",
   x = "Count",
   y = "Color") + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5))
 
-popular_color = (color_all + color_1) / (color_2 + color_3)
+color_all 
+color_1
+color_2
+color_3
 ```
 
-These plots show several famous color in Allegheny County, including black, brown, white, etc., and the most popular color is black.
+ - There are also unique colors, which only have a few:
+ 
+```{r echo = FALSE}
+tidy_data %>% 
+  count(color) %>% 
+  arrange(n) %>% 
+  top_n(10, n) %>% 
+  knitr::kable()
+```
 
-```{r}
+
+## Breed type & Color
+
+
+ - The graph below indicates that there are no significant correlation between number of color and breed type of the dog. A slightly difference is that there are more pure dogs with one color than mixed breed dogs and have less two-color/3+ dogs, which can be explained with common sense. 
+ 
+
+```{r echo = FALSE}
 breed_color = 
   tidy_data %>% 
+  group_by(breed_type, ncolor) %>% 
   ggplot(aes(x=ncolor, group = breed_type)) + 
   geom_bar(aes(y = ..prop.., fill = factor(..x..)), stat="count") + 
   scale_y_continuous(labels=scales::percent) +
-  geom_text(aes( label = scales::percent(..prop..),
-                   y= ..prop.. ), stat= "count", vjust = -.5) +
+  geom_text(aes(label = scales::percent(..prop..),
+                   y= ..prop.. ), stat= "count", vjust = -.5, size = 2.5) +
   facet_grid(. ~ breed_type) + 
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5)) +
   labs(
   title = "Breed type proportion according to ncolor",
   x = "ncolor",
   y = "Proportion")
 
+breed_color
+```
+
+
+
+## License & Color
+
+ - Similar with Breed type, this plot indicates that there are no significant correlation between number of color and license type. The percentages are almost evenly distributed in each group.
+
+```{r echo = FALSE}
 license_ncolor = 
   tidy_data %>% 
   ggplot(aes(x=ncolor, group = license_type)) + 
   geom_bar(aes(y = ..prop.., fill = factor(..x..)), stat="count") + 
   scale_y_continuous(labels=scales::percent) +
   geom_text(aes( label = scales::percent(..prop..),
-                   y= ..prop.. ), stat= "count", vjust = -.5) +
+                   y= ..prop.. ), stat= "count", vjust = -.5, size = 2.5) +
   facet_grid(. ~ license_type) + 
-  theme(legend.position = 'none') +
+  theme(legend.position = 'none',
+        plot.title = element_text(size=10, hjust = 0.5),
+        strip.text.x = element_text(size = 8)) +
   labs(
   title = "License type proportion according to ncolor",
   x = "ncolor",
   y = "Proportion")
+
+license_ncolor
+
 ```
 
-These graphs indicate that there are no significant correlation between number of color and license type/breed type of the dog. The distributions are similar in each group.
 
-```{r}
+ - This plot shows the distribution of dog license type with top 10 popular colors. There are no obvious regular pattern between license type and color.
+
+ 
+```{r echo = FALSE}
 license_color = 
   tidy_data %>% 
   filter(color %in% c("BLACK", "BROWN", "WHITE/BLACK", "BLACK/BROWN", "WHITE",
@@ -148,15 +212,20 @@ license_color =
   geom_bar(aes(y = ..prop.., fill = factor(..x..)), stat="count") + 
   scale_y_continuous(labels=scales::percent) +
   geom_text(aes( label = scales::percent(..prop..),
-                   y= ..prop.. ), stat= "count", vjust = -.5) +
+                   y= ..prop.. ), stat= "count", vjust = -.5, size = 2.5) +
   facet_grid(. ~ license_type) +
   coord_flip() + 
-  theme(legend.position = 'none') +
   labs(
-  title = "Distribution of dog license type with top 10 popular colors.",
+  title = "Distribution of dog license type with top 10 popular colors",
   x = "ncolor",
-  y = "Proportion")
+  y = "Proportion") + 
+  theme(
+    legend.position = "none", 
+    plot.title = element_text(size=10, hjust = 0.5),
+    strip.text.x = element_text(size = 6),
+    axis.text.x=element_blank())
+
+license_color
 ```
-
-This graph shows the distribution of dog license type with top 10 popular colors. There are no obvious regular pattern.
-
+ 
+ - To conclude, there are various colors of dog and some are hard to imagine, while black, white and brown are always more common. Since color is a natural quality of dog, we suppose that there should not be strong relationship with their license acquisition, which is proved by the above analysis.
