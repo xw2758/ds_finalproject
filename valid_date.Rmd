@@ -1,6 +1,6 @@
 ---
 title: "Validation Date of Lifetime Dog Licenses in Allegheny County"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
