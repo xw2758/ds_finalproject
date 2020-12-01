@@ -5,6 +5,8 @@ navbar:
   left:
     - text: "Screencast"
       href: video.html
+    - text: "Count over time"
+      href: https://lt2812.shinyapps.io/count_over_time/
     - text: "Analysis"
       menu:
       - text: "Breed"

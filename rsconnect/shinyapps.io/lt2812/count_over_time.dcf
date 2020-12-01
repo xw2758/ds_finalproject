@@ -1,0 +1,10 @@
+name: count_over_time
+title:
+username:
+account: lt2812
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3322809
+bundleId:
+url: https://lt2812.shinyapps.io/count_over_time/
+when: 1606813525.75373
