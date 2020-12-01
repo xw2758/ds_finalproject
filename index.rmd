@@ -14,4 +14,5 @@ Dog license acquisition seems to be complicated by different policies in differe
 
 ## Dataset
 
-The dataset we used in this project is sourced from [alleghenycounty.us](http://infoportal.alleghenycounty.us/dogdata/default.aspx). Specifically, we obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.
+All data can be found [here](https://drive.google.com/drive/folders/1-2856h3a4ZFUfNBv1u6TQdKJj1_zZ1Yv
+). Especially, the license dataset was sourced from [alleghenycounty.us](http://infoportal.alleghenycounty.us/dogdata/default.aspx). We obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.
