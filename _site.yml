@@ -5,8 +5,12 @@ navbar:
   left:
     - text: "Screencast"
       href: video.html
-    - text: "Count over time"
-      href: https://lt2812.shinyapps.io/count_over_time/
+    - text: "Interactive plots"
+      menu:
+      - text: "Count over time"
+        href: https://lt2812.shinyapps.io/interactivemap/
+      - text: "Licenses by zipcode"
+        href: https://lt2812.shinyapps.io/interactivity/
     - text: "Analysis"
       menu:
       - text: "Breed"
