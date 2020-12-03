@@ -376,13 +376,18 @@ Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixi
 <h2>Dataset</h2>
 <p>All data can be found <a href="https://drive.google.com/drive/folders/1-2856h3a4ZFUfNBv1u6TQdKJj1_zZ1Yv">here</a>. Especially, the license dataset was sourced from <a href="http://infoportal.alleghenycounty.us/dogdata/default.aspx">alleghenycounty.us</a>. We obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.</p>
 </div>
+<div id="motivation" class="section level2">
+<h2>Motivation</h2>
+<p>According the <a href="https://www.petplace.com/article/dogs/pet-health/the-purpose-of-pet-licenses-for-dogs/">PetPlace website</a>, licensing the pet is considered to have many benefits. For example, licensing might help to reunite the pet with its family by telling animal control officers that a dog or cat has an owner. Additionally, emergency treatment could be guaranteed if the pet is found injured based on the license and we could keep track of how many pets a person owns using the licenses.</p>
+<p>And we mainly focus on the dog license and the acquisition seems to be complicated by states. We take Allegheny County, PA as an example since they have special regulations of dog lifetime licenses. Based on <a href="https://www.agriculture.pa.gov/Animals/DogLaw/License_Your_Dog/Pages/default.aspx">An Official Pennsylvania Government Website</a>, it seems that in PA all dogs three months or older must be licensed by January 1 of each year and violators can be cited with a maximum fine of $300 per violation plus court costs. This project is designed to analyze potential associated indicators and distributions of the dog life license.</p>
+</div>
 <div id="tidy-data" class="section level2">
 <h2>Tidy data</h2>
 <ul>
 <li><p>In terms of the license type, we delete three types: “Dog Lifetime Duplicate”, “Dog Out of County Transfer - Lifetime”, “Dog Inter County Transfer - Lifetime”, and use “N/S” to denote the Neutered Male and Spayed Female.</p></li>
 <li><p>For breed type, we separate the breed into two types: “mixed” and “pure”. All the breeds whose name contains “mix” are belong to mixed and others are pure.</p></li>
 <li><p>For the color type, we delete some items and combine variables with same meanings. We look for the TOP 5~10 colors as well as proportion of the number of colors and suggest that “MULTI”, “TRI-COLOR” and other specific 3 colors might have 3+ colors.</p></li>
-<li><p>There is some zipcode that are not in Allegheny County, such as 16229, 46845 and so on. We only select zipcode of cities that belong to Allegheny County.</p></li>
+<li><p>There is some zip code that are not in Allegheny County, such as 16229, 46845 and so on. We only select zip code of cities that belong to Allegheny County.</p></li>
 <li><p>When it comes to valid date, We remain the years of the validation data and convert the specific time to AM and PM of a day.</p></li>
 </ul>
 </div>
