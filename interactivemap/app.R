@@ -14,8 +14,10 @@ ui <- fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-            checkboxGroupInput("breed_choice", label = h3("Select breed"),
-                               choices = breed, selected = "MIXED")
+            tags$head(
+                includeCSS("bootstrap.min.css")),
+            selectInput("breed_choice", label = h3("Select breed"),
+                               choices = breed, selected = "MIXED", multiple = TRUE)
         ),
 
         # Show a plot of the generated distribution

@@ -49,7 +49,7 @@ And we mainly focus on the dog license and the acquisition seems to be complicat
 
 
 
-## Conculsion
+## Conclusions
 
 + About license type, the most popular one is “Dog Lifetime N/S” ( total counts of 24692), while the type “Dog Senior Lifetime” seems to be least chosen (total counts of 496).
 
@@ -69,6 +69,6 @@ And we mainly focus on the dog license and the acquisition seems to be complicat
 
 ## Discussion 
 
-There are no significant correlation between color & breed type, color & license type. However, there is a robust (R square = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future under normal circumstances. Therefore, we can use the the predicted number to compare with the actual number of licenses, which implies the effects of Covid-19 on dog lifetime licenses.
+There are no significant correlation between color & breed type, color & license type. However, there is a robust (R square = 0.99) linear relationship between the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future under normal circumstances. Therefore, we can use the the predicted number to compare with the actual number of licenses, which implies the effects of Covid-19 on dog lifetime licenses.
 
 
