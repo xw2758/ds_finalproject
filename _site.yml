@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Screencast"
       href: video.html
-    - text: "Interactive plots"
+    - text: "Interactive Plots"
       menu:
       - text: "Count over time"
         href: https://lt2812.shinyapps.io/interactivemap/
