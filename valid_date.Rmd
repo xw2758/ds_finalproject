@@ -1,6 +1,9 @@
 ---
 title: "Validation Date of Lifetime Dog Licenses in Allegheny County"
-output: html_document
+output:
+   html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -101,4 +104,3 @@ plot_valid_time
 ```
 
 From the bar chart above, people tend to obtain the lifetime licenses on PM rather than AM. The people obtain the lifetime licenses is nearly double the people on AM. 
-.
