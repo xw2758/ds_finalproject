@@ -24,7 +24,7 @@ All data can be found [here](https://drive.google.com/drive/folders/1-2856h3a4ZF
 
 + The distribution of license counts between Female and Male group does not show large difference in all four types
 
-+ About colour, the pure color dogs have the largest number while dogs mixed of more than 3 colors have the least. The most popular color is black, even in two-color and mixed color groups.
++ About color, the pure color dogs have the largest number while dogs mixed of more than 3 colors have the least. The most popular color is black, even in two-color and mixed color groups.
 
 + The number of licenses of the pure breed is about  twice as much the license of the mixed breed. LAB MIX and LABRADOR RETRIEVER are the top one in the mixed and pure group respectively, much more than other breeds.
 
@@ -36,6 +36,6 @@ All data can be found [here](https://drive.google.com/drive/folders/1-2856h3a4ZF
 
 ## Discussion 
 
-There are no significant correlation between color & breed type, color & license type. However, there is a robust (R suare = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future. 
+There are no significant correlation between color & breed type, color & license type. However, there is a robust (R square = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future under normal circumstances. Therefore, we can use the the predicted number to compare with the actual number of licenses, which implies the effects of Covid-19 on dog lifetime licenses.
 
 
