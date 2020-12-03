@@ -1,6 +1,9 @@
 ---
 title: "license_type"
-output: github_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r, message = FALSE, warning = FALSE, echo = FALSE}
@@ -60,7 +63,7 @@ Firstly, we compare number of licenses between Male and Female, obtaining the re
 
 
 
-## Sex Analysis
+## Sex Analysis 
 
 ```{r, echo = FALSE}
 # sex 
