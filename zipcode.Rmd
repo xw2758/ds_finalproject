@@ -1,5 +1,5 @@
 ---
-title: "zipcode"
+title: "Numbers of license by zipcode"
 output: html_document
 ---
 
@@ -59,7 +59,17 @@ licence_bins <- c(0, 136, 440, 730, 1329, 1852)
 licence_pal <- colorBin('Greens', bins = licence_bins, na.color = '#aaff56')
 ```
 
-The map shows the number of license by zip code. When clicking on it, you can see zip cde and its number of license. It shows that people in Pittsburgh hold less licenses, while people in Ross Township and Bethel Park are holding the largest number of lifetime licenses, which may indicates that people in those places are likely to keep pet dogs.
+### How to tidy data?
+
+There is some zipcode that are not in Allegheny County, such as 16229, 46845 and so on. We only select zipcode of cities that belong to Allegheny County.
+
+### What is the map?
+
+The map shows the number of license by zip code. When clicking on it, you can see zip cde and its number of license.
+
+### What can we get from the map?
+
+It shows that people in Pittsburgh hold less licenses, while people in Ross Township and Bethel Park are holding the largest number of lifetime licenses, which may indicates that people in those places are likely to keep pet dogs.
 
 ```{r echo=FALSE}
 leaflet::leaflet(data = zip_map_crs) %>% 
