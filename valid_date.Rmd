@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 	warning = FALSE,
 	fig.width = 12, 
   fig.height = 8,
-	fig.path='Figs_Valid_date/',
+	fig.path ='Figs_Valid_date/',
   out.width = "90%"
 )
 
