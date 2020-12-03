@@ -3,7 +3,7 @@ title: "license_type"
 output: github_document
 ---
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
 library(tidyverse)
 knitr::opts_chunk$set(
   fig.width = 6,
@@ -21,7 +21,7 @@ scale_colour_discrete = scale_color_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
-# License_type
+
 
 In terms of the license type, we delete three types: "Dog Lifetime Duplicate", "Dog Out of County Transfer - Lifetime", "Dog Inter County Transfer - Lifetime". 
 
@@ -30,7 +30,7 @@ We mainly focus on the remaining four types which are all lifetime licenses.
 Since the Neutered Male and Spayed Female could be classified into one situation, then we use "N/S" to denote the Neutered Male and Spayed Female.
 
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
 
 raw_data = read_csv("raw_data.csv")
 
@@ -56,9 +56,13 @@ tidy_data =
 
 Firstly, we compare number of licenses between Male and Female, obtaining the result that the two percents are approximately 50% with Female type having a bit larger counts.
 
-* Sex Analysis
 
-```{r}
+
+
+
+## Sex Analysis
+
+```{r, echo = FALSE}
 # sex 
 tidy_data %>% 
  count(sex) %>% 
@@ -68,7 +72,14 @@ tidy_data %>%
  
 ```
 
-* License type & Sex Analysis
+
+
+
+
+
+
+
+## License type & Sex Analysis
 
 Secondly, the following table and plot represent the number of licenses in Female and Male groups.
 
@@ -76,7 +87,7 @@ Apparently, the most popular license type is "Dog Lifetime N/S" with a total num
 
 The distribution of license counts between Female and Male group does not show large difference in these four types, which is consistent with previous sex analysis.
 
-```{r}
+```{r, echo = FALSE}
 table1 = 
  tidy_data %>% 
  count(license_type, sex) %>% 
@@ -90,7 +101,7 @@ table1 %>%
 
 
 
-```{r}
+```{r, echo = FALSE}
 plot1 = 
   tidy_data %>% 
 
@@ -113,13 +124,19 @@ plot1
 ```
 
 
-* Price Analysis
+
+
+
+
+
+
+## Price Analysis
 
 Thirdly, we calculate the total price for the four types based on the single price.
 
 The type "Dog Lifetime" has most expensive price per license, but the "Dog Lifetime N/S" group has largest total prices due to its large counts.
 
-```{r}
+```{r, echo = FALSE}
 price_df = 
   tibble(
     total = c(1917,24692,496,4560),
@@ -141,8 +158,11 @@ price_ %>%
   
   
   
+  
+  
+  
 
-* Sex & License type Analysis
+## Sex & License type Analysis
 
 Finally, we study the choices of different types from the perspective of sex. 
 
@@ -151,7 +171,7 @@ For both male and female dogs, the number of license counts differ a lot among f
 Additionally, the pattern of license types tend to be the same for male and female groups, with same license type of largest and smallest counts.
 
 
-```{r}
+```{r, echo = FALSE}
 table2 = 
  tidy_data %>% 
  count(sex, license_type) %>% 
@@ -166,7 +186,7 @@ table2
 
 
 
-```{r}
+```{r, echo = FALSE}
 plot2 = 
   tidy_data %>% 
 
