@@ -10,6 +10,8 @@ output:
 library(tidyverse)
 library(patchwork)
 library(dplyr)
+library(MASS)
+library('DescTools')
 
 knitr::opts_chunk$set(
   fig.width = 6,
@@ -148,6 +150,11 @@ tidy_data %>%
 
 ## Breed type & Color
 
+```{r echo=FALSE}
+breed_color_corr = ContCoef(tidy_data$breed, tidy_data$color, correct = FALSE)
+```
+
+ - Since the number of color and breed are large, it is not feasible to make plots of all of them to explore their relationship. Thus, we test the correlation between them and create contingency coefficient: **breed_color_corr = `r breed_color_corr`.** (Contingency table is also too large to listed here)
 
  - The graph below indicates that there are no significant correlation between number of color and breed type of the dog. A slightly difference is that there are more pure dogs with one color than mixed breed dogs and have less two-color/3+ dogs, which can be explained with common sense. 
  
@@ -228,4 +235,4 @@ license_color =
 license_color
 ```
  
- - To conclude, there are various colors of dog and some are hard to imagine, while black, white and brown are always more common. Since color is a natural quality of dog, we suppose that there should not be strong relationship with their license acquisition, which is proved by the above analysis.
+ - To conclude, there are various colors of dog and some are hard to imagine, while black, white and brown are always more common. Since color is a natural quality of dog, we suppose that there should not be strong relationship with their license acquisition, which is proved by the above analysis. Besides, we preliminary found that there are contingency correlation between breed and color, which still need further exploration and more data to illustrate.

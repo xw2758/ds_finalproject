@@ -355,7 +355,7 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Interactive plots
+    Interactive Plots
      
     <span class="caret"></span>
   </a>
@@ -515,22 +515,23 @@ div.tocify {
 <div id="breed-type-color" class="section level2">
 <h2>Breed type &amp; Color</h2>
 <ul>
-<li>The graph below indicates that there are no significant correlation between number of color and breed type of the dog. A slightly difference is that there are more pure dogs with one color than mixed breed dogs and have less two-color/3+ dogs, which can be explained with common sense.</li>
+<li><p>Since the number of color and breed are large, it is not feasible to make plots of all of them to explore their relationship. Thus, we test the correlation between them and create contingency coefficient: <strong>breed_color_corr = 0.9126675.</strong> (Contingency table is also too large to listed here)</p></li>
+<li><p>The graph below indicates that there are no significant correlation between number of color and breed type of the dog. A slightly difference is that there are more pure dogs with one color than mixed breed dogs and have less two-color/3+ dogs, which can be explained with common sense.</p></li>
 </ul>
-<p><img src="color_files/figure-html/unnamed-chunk-4-1.png" width="90%" /></p>
+<p><img src="color_files/figure-html/unnamed-chunk-5-1.png" width="90%" /></p>
 </div>
 <div id="license-color" class="section level2">
 <h2>License &amp; Color</h2>
 <ul>
 <li>Similar with Breed type, this plot indicates that there are no significant correlation between number of color and license type. The percentages are almost evenly distributed in each group.</li>
 </ul>
-<p><img src="color_files/figure-html/unnamed-chunk-5-1.png" width="90%" /></p>
+<p><img src="color_files/figure-html/unnamed-chunk-6-1.png" width="90%" /></p>
 <ul>
 <li>This plot shows the distribution of dog license type with top 10 popular colors. There are no obvious regular pattern between license type and color.</li>
 </ul>
-<p><img src="color_files/figure-html/unnamed-chunk-6-1.png" width="90%" /></p>
+<p><img src="color_files/figure-html/unnamed-chunk-7-1.png" width="90%" /></p>
 <ul>
-<li>To conclude, there are various colors of dog and some are hard to imagine, while black, white and brown are always more common. Since color is a natural quality of dog, we suppose that there should not be strong relationship with their license acquisition, which is proved by the above analysis.</li>
+<li>To conclude, there are various colors of dog and some are hard to imagine, while black, white and brown are always more common. Since color is a natural quality of dog, we suppose that there should not be strong relationship with their license acquisition, which is proved by the above analysis. Besides, we preliminary found that there are contingency correlation between breed and color, which still need further exploration and more data to illustrate.</li>
 </ul>
 </div>
 
