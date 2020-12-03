@@ -32,7 +32,7 @@ All data can be found [here](https://drive.google.com/drive/folders/1-2856h3a4ZF
 
 + There exists a linear relationship between the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. However, in 2020, the number of the lifetime licenses decreased a little, which might result from the Covid-19.
 
-+ About the preference of time, people tend to obtain lifetime licenses in the afternoon  rather than morning
++ About the preference of time, people tend to obtain lifetime licenses in the afternoon  rather than in the morning.
 
 ## Discussion 
 
