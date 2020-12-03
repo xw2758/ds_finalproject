@@ -24,8 +24,6 @@ navbar:
       - text: "Zipcode"
         href: zipcode.html        
   right:
-    - text: "Project report"
-      href: report.html
     - text: "Contact Us"
       icon: fa-telegram fa-lg
       menu:
