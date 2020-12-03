@@ -22,8 +22,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -384,7 +395,7 @@ Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixi
 <ul>
 <li><p>About license type, the most popular one is “Dog Lifetime N/S” ( total counts of 24692), while the type “Dog Senior Lifetime” seems to be least chosen (total counts of 496).</p></li>
 <li><p>The distribution of license counts between Female and Male group does not show large difference in all four types</p></li>
-<li><p>About colour, the pure color dogs have the largest number while dogs mixed of more than 3 colors have the least. The most popular color is black, even in two-color and mixed color groups.</p></li>
+<li><p>About color, the pure color dogs have the largest number while dogs mixed of more than 3 colors have the least. The most popular color is black, even in two-color and mixed color groups.</p></li>
 <li><p>The number of licenses of the pure breed is about twice as much the license of the mixed breed. LAB MIX and LABRADOR RETRIEVER are the top one in the mixed and pure group respectively, much more than other breeds.</p></li>
 <li><p>Regarding regional distribution, people in Pittsburgh hold less licenses, while people in Ross Township and Bethel Park hold the largest number of lifetime licenses.</p></li>
 <li><p>There exists a linear relationship between the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. However, in 2020, the number of the lifetime licenses decreased a little, which might result from the Covid-19.</p></li>
@@ -393,7 +404,7 @@ Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixi
 </div>
 <div id="discussion" class="section level2">
 <h2>Discussion</h2>
-<p>There are no significant correlation between color &amp; breed type, color &amp; license type. However, there is a robust (R suare = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future.</p>
+<p>There are no significant correlation between color &amp; breed type, color &amp; license type. However, there is a robust (R square = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future under normal circumstances. Therefore, we can use the the predicted number to compare with the actual number of licenses, which implies the effects of Covid-19 on dog lifetime licenses.</p>
 </div>
 
 
@@ -405,7 +416,7 @@ Group Member: Shuhong Xiang(sx2289), Xinyi Wang(xw2758), Ling Tuo(lt2812), Zhixi
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
