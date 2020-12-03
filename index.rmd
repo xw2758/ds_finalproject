@@ -16,3 +16,26 @@ Dog license acquisition seems to be complicated by different policies in differe
 
 All data can be found [here](https://drive.google.com/drive/folders/1-2856h3a4ZFUfNBv1u6TQdKJj1_zZ1Yv
 ). Especially, the license dataset was sourced from [alleghenycounty.us](http://infoportal.alleghenycounty.us/dogdata/default.aspx). We obtained lifetime license data while information of other non-lifetime license with Expire year range from 2007 to 2020 are also available on the website. Variables in this dataset are: License type, breed, color, dog name, ownerzip, expire year, valid date. The expiration year of 2099 indicates the Lifetime License, which is valid for the life of the dog.
+
+
+## Conculsion
+
++ About license type, the most popular one is “Dog Lifetime N/S” ( total counts of 24692), while the type “Dog Senior Lifetime” seems to be least chosen (total counts of 496).
+
++ The distribution of license counts between Female and Male group does not show large difference in all four types
+
++ About colour, the pure color dogs have the largest number while dogs mixed of more than 3 colors have the least. The most popular color is black, even in two-color and mixed color groups.
+
++ The number of licenses of the pure breed is about  twice as much the license of the mixed breed. LAB MIX and LABRADOR RETRIEVER are the top one in the mixed and pure group respectively, much more than other breeds.
+
++ Regarding regional distribution, people in Pittsburgh hold less licenses, while people in Ross Township and Bethel Park hold the largest number of lifetime licenses.
+
++ There exists a linear relationship between the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. However, in 2020, the number of the lifetime licenses decreased a little, which might result from the Covid-19.
+
++ About the preference of time, people tend to obtain lifetime licenses in the afternoon  rather than morning
+
+## Discussion 
+
+There are no significant correlation between color & breed type, color & license type. However, there is a robust (R suare = 0.99) linear relationship between the the number of the total lifetime dog licenses and the year of valid year from 2003 to the 2019. Thus, we can predict the the number of total dog lifetime licenses in the future. 
+
+
