@@ -13,18 +13,29 @@
 
 <title>Screencast</title>
 
-<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -274,20 +285,78 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        
+        <li>
+  <a href="video.html">Screencast</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Interactive Plots
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://lt2812.shinyapps.io/interactivemap/">Count over time</a>
+    </li>
+    <li>
+      <a href="https://lt2812.shinyapps.io/interactivity/">Licenses by zipcode</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="breed.html">Breed</a>
+    </li>
+    <li>
+      <a href="color.html">Color</a>
+    </li>
+    <li>
+      <a href="license_type.html">License Type</a>
+    </li>
+    <li>
+      <a href="valid_date.html">Valid date</a>
+    </li>
+    <li>
+      <a href="zipcode.html">Zipcode</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="about.html">About</a>
-</li>
-<li>
-  <a href="mailto:&lt;you@youremail.com&gt;">
-    <span class="fa fa-envelope fa-lg"></span>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-telegram fa-lg"></span>
      
+    Contact Us
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mailto:&lt;sx2289@cumc.columbia.edu&gt;">Shuhong Xiang</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;xw2758@cumc.columbia.edu&gt;">Xinyi Wang</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;lt2812@cumc.columbia.edu&gt;">Ling Tuo</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;zw2709@cumc.columbia.edu&gt;">Zhixing Wu</a>
+    </li>
+    <li>
+      <a href="mailto:&lt;yz3956@cumc.columbia.edu&gt;">Yali Zhai</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="http://github.com/&lt;YOUR_GH_NAME&gt;/">
+  <a href="http://github.com/xw2758/ds_finalproject">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -306,7 +375,11 @@ $(document).ready(function () {
 </div>
 
 
-
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/D2URKCZepF4" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 
 
 
@@ -317,7 +390,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
